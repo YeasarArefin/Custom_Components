@@ -104,9 +104,9 @@ export default function NavItems({ links }: { links: Link[] }) {
 }
 ```
 
-- Demo : [Navbar-1](http://localhost:3000/dashboard)
+- Demo : [Navbar-1](https://custom-components-chi.vercel.app/navbar/1)
 
-## Dashboard Shell - 1
+## Shell - 1
 
 - Create File `Shell.tsx`
 
@@ -162,4 +162,4 @@ export default function Sidebar({ children }: { children: React.ReactNode }) {
 }
 ```
 
-- Demo : [Dashboard-1](http://localhost:3000/dashboard)
+- Demo : [Shell-1](https://custom-components-chi.vercel.app/shell/1)
