@@ -39,7 +39,7 @@ export default function Sidebar({ children }: { children: React.ReactNode }) {
                     <h1 className="font-bold">shadcn/sidebar</h1>
                 </div>
             </nav>
-            <div className="flex flex-1 overflow-hidden relative">
+            <div className="flex overflow-hidden relative h-full">
                 <aside className={cn("w-[300px] h-full border-r p-5 absolute bg-white md:static flex flex-col gap-y-2 transition-all duration-300 ease-in-out overflow-y-auto", { "-left-[300px]": !mobileMenu, "-left-[0px] w-full md:w-[300px]": mobileMenu })}>{items}</aside>
 
                 <main className="flex-1 p-5 overflow-y-auto">{children}</main>
