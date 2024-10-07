@@ -1,4 +1,4 @@
-"use client"
+"use client";
 import { cn } from "@/lib/utils";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -9,9 +9,9 @@ import { HiOutlineUsers } from "react-icons/hi2";
 import { IoMdClose } from "react-icons/io";
 import { MdOutlineDashboard } from "react-icons/md";
 
-export default function Sidebar({ children }: { children: React.ReactNode }) {
+export default function Sidebar({ children }: { children: React.ReactNode; }) {
 
-    const [mobileMenu, setMobileMenu] = useState(false)
+    const [mobileMenu, setMobileMenu] = useState(false);
 
     const links = [
         { name: 'Dashboard', to: '/dashboard', icon: MdOutlineDashboard },
@@ -23,8 +23,8 @@ export default function Sidebar({ children }: { children: React.ReactNode }) {
         // eslint-disable-next-line react-hooks/rules-of-hooks
         const pathname = usePathname();
         const isActive = pathname.endsWith(to);
-        return <Link key={to} href={to} className={cn("px-3 py-2 hover:bg-slate-200 transition-all duration-200 text-sm rounded-sm font-semibold flex items-center gap-x-2", { "bg-slate-200": isActive })}><Icon className="text-xl" /> <span>{name}</span></Link>
-    })
+        return <Link key={to} href={to} className={cn("px-3 py-2 hover:bg-slate-200 transition-all duration-200 text-sm rounded-sm font-semibold flex items-center gap-x-2", { "bg-slate-200": isActive })}><Icon className="text-xl" /> <span>{name}</span></Link>;
+    });
 
     return (
         <div className="h-screen flex flex-col">
@@ -40,10 +40,9 @@ export default function Sidebar({ children }: { children: React.ReactNode }) {
                 </div>
             </nav>
             <div className="flex overflow-hidden relative h-full">
-                <aside className={cn("w-[300px] h-full border-r p-5 absolute bg-white md:static flex flex-col gap-y-2 transition-all duration-300 ease-in-out overflow-y-auto", { "-left-[300px]": !mobileMenu, "-left-[0px] w-full md:w-[300px]": mobileMenu })}>{items}</aside>
-
+                <aside className={cn("md:w-[200px] lg:w-[300px] h-full border-r p-5 absolute bg-white md:static flex flex-col gap-y-2 transition-all duration-300 ease-in-out overflow-y-auto", { "-left-[300px]": !mobileMenu, "-left-[0px] w-full md:w-[300px]": mobileMenu })}>{items}</aside>
                 <main className="flex-1 p-5 overflow-y-auto">{children}</main>
             </div>
         </div>
-    )
+    );
 }

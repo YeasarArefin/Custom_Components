@@ -1,4 +1,4 @@
-import Shell from "@/components/shell_1/Shell";
+import Shell from "@/components/shell_2/Shell";
 import React from "react";
 
 export default function layout({ children }: { children: React.ReactNode; }) {
